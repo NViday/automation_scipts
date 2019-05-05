@@ -7,11 +7,19 @@
 # a list of worspaces server folder
 
 
- for workplace in $@:
+ for workspace in $@; do
 
-	cd $workplace/server
+	echo "changing working directory for $workspace"
+	
+	cd $workspace"server"
 
+	echo "init git " 
 	git init
 
+	echo "add all "
+	git  add * 
 
+	echo "commit changes" 
+
+	git commit -m  "first commit"
 done

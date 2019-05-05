@@ -8,20 +8,27 @@
 # [arg] list of workspaces
 
 
-for workplace in $@:
+for workspace in $@; do
 
-	cd $workplace/server
+	echo "changing working directory for $workspace"
+
+	cd $workspace"server"
+
+	echo "installing npm modules -- wave 1"
 
 	npm install --save nodemon express compression cors 
 	
+	echo "installing npm modules -- wave 2"
+
 	npm install --save jsonwebtoken validator mongoose-bcrypt 
 
-	npm install --save bcrypt google-auth-library mongoose-string-query
+	echo "installing npm modules -- wave 3"
 
+	npm install --save bcrypt google-auth-library mongoose-string-query
+	
 
 done 
   
-
 
 
 #0
